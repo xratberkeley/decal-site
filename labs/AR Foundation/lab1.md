@@ -18,7 +18,7 @@ grand_parent: Labs
 
 Welcome to Monster Shooter! Over the course of these labs, you’ll be building a game that looks something like this:
 
-![image](/assets/images/ar%20foundation/lab1/1.png)
+![image](../../assets/images/ar foundation/lab1/1.png)
 
 These labs will not be a comprehensive overview of everything that Unity and AR has to offer. However, they will touch upon a lot of different topics so that you get a taste of what is possible. The labs will also serve as practice for creating a project from start to finish, something that will be valuable for the final project.
 
@@ -46,7 +46,7 @@ This will be a quick tutorial on setting up Unity for AR Foundation, and iOS and
 
 Download Unity 2019.4.3f1. We recommend using Unity Hub because it allows you to easily manage multiple Unity versions. Add the modules: Android Build Support, IOS Build Support.
 
-![image](/assets/images/ar%20foundation/lab1/Add%20modules.png)
+![image](../../assets/images/ar foundation/lab1/Add modules.png)
 
 If deploying to iOS, you will need to download XCode as well.
 
@@ -74,7 +74,7 @@ Importing might take a while, as Unity will have to load and configure a lot of 
 
 Once it’s finished, you’ll see in your Project view a bunch of folders, which we’ll briefly give a rundown for below.
 
-![image](/assets/images/ar%20foundation/lab1/assets.png)
+![image](../../assets/images/ar foundation/lab1../assets.png)
 
 - Animations: Contains animation data for the gun and monsters.
 
@@ -108,7 +108,7 @@ You can read the documentation here: [https://docs.unity3d.com/Packages/com.unit
 
 You can rename the scene to “lab” under the project view. **(right-click > rename)**
 
-![image](/assets/images/ar%20foundation/lab1/lab%20project%20view.png)
+![image](../../assets/images/ar foundation/lab1/lab project view.png)
 
 Navigate to the build settings. **(File > Build Settings)** Change the deployment target to either iOS or Android.
 
@@ -138,7 +138,7 @@ Adjust the player settings. (click player settings on the bottom left)
 3. Then, back to build settings, under Run Device, select the device you want to deploy the app to.
 4. Click build and run, and after saving the apk somewhere on your computer, it will export onto your mobile device and will automatically run if your device is open. It will also appear like an app where all your other apps are as well.
 
-![image](/assets/images/ar%20foundation/lab1/Android%20settings.png)
+![image](../../assets/images/ar foundation/lab1/Android settings.png)
 
 Now you should be able to build the project on your device. Please follow this tutorial for help. [https://learn.unity.com/tutorial/building-for-mobile#5c7f8528edbc2a002053b4a1](https://learn.unity.com/tutorial/building-for-mobile#5c7f8528edbc2a002053b4a1)
 
@@ -146,7 +146,7 @@ Now you should be able to build the project on your device. Please follow this t
 
 At this point you should have your project setup and an empty scene with an AR Session and AR Session Origin.
 
-![image](/assets/images/ar%20foundation/lab1/lab%20hierarchy.png)
+![image](../../assets/images/ar foundation/lab1/lab hierarchy.png)
 
 Next, we need to configure the AR Session Origin. Select the AR Session Origin in the hierarchy and click add component in the inspector. Add the following components:
 
@@ -156,11 +156,11 @@ Next, we need to configure the AR Session Origin. Select the AR Session Origin i
 
 Now add the appropriate prefab to the AR Plane Manager and AR Point Cloud Manager. Under the Project window, open Assets/Prefabs. Drag the AR Plane Debug Visualizer into the AR Plane Manager’s Plane Prefab slot.
 
-![image](/assets/images/ar%20foundation/lab1/ar%20plane%20manager.png)
+![image](../../assets/images/ar foundation/lab1/ar plane manager.png)
 
 Do the same with the AR Point Cloud Debug Visualizer and the AR Point Cloud Manager.
 
-![image](/assets/images/ar%20foundation/lab1/ar%20point%20cloud%20manager.png)
+![image](../../assets/images/ar foundation/lab1/ar point cloud manager.png)
 
 These visualizers are pretty helpful for debugging and building the scene. In the future when we finish the game feel free to remove them by setting the prefab slot to None.
 
@@ -194,6 +194,6 @@ static List<ARRaycastHit> s_Hits = new List<ARRaycastHit>();
 
 Next, we can now add the place on plane script to the AR Session origin. You can drag the script to the inspector or click add component and search Place on Plane. Then put the environment prefab in the placed prefab slot.
 
-![image](/assets/images/ar%20foundation/lab1/place%20on%20plane.png)
+![image](../../assets/images/ar foundation/lab1/place on plane.png)
 
 *Congratulations! We can now place our environment onto an AR plane where we tap. You can build the app onto your phone to check it out.*

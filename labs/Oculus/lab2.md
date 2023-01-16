@@ -20,7 +20,7 @@ In this lab, we’ll focus completely on the gun. By the end of the lab, you sho
 
 How can we interact with our gun, anyway? If you hold an Oculus controller in your hand, you’ll notice that there are two triggers that we can press. One is with the middle finger, called the Hand Trigger, and the other is with the index finger, called the Index Trigger. Pictured below is the control scheme for any Oculus Controller.
 
-![image](/assets/images/oculus/lab2/11.png)
+![image](../../assets/images/oculus/lab2/11.png)
 
 For our gun, we want to implement the following functionality:
 
@@ -46,13 +46,13 @@ Because of the XR Interaction Toolkit package, we can easily grab objects only u
 
 Next, go to the Gun in the hierarchy and add the **XR Grab Interactable** component. Under **Movement Type**, select **Kinematic**. 
 
-![image](/assets/images/oculus/lab2/combined%20xr%20interactable_0.png)
+![image](../../assets/images/oculus/lab2/combined xr interactable_0.png)
 
 You can try to grab the gun with the grip buttons and feel free to move the boxes in the editor if you cannot reach it. You will immediately notice that there is a rotation problem upon grabbing the gun which prevents accurate shooting. Let's fix that by adding an offset to the attach transform field on the gun XR Grab Interactable. 
 
 Create an empty GameObject with the name "Attach Transform" with rotation values x = -10, y = -165, z = 0, and drag this child GameObject to the Attach Transform field in the XR Grab Interactable Component.
 
-![image](/assets/images/oculus/lab2/gun%20offset.png)
+![image](../../assets/images/oculus/lab2/gun offset.png)
 
 Ok! Now we can grab and aim the gun correctly. Now let us implement the firing of the gun. Because there are no available The outline of this is as follows:
 
@@ -64,13 +64,13 @@ First, we need to define what a "trigger" is. Because we use an Action-based con
 
 Under Action Maps, select "XRI LeftHand Interaction". To the right Actions window, we can see that there are actions such as Select that read the button press from the corresponding inputs (this is what let us grab earlier). Click the plus on the Actions window and name it Trigger. Next, click on "<No Binding>" and on the Binding Properties window, select **XR Controller > XR Controller (Left Hand) > Optional Controls > triggerPressed** which will set this action to correspond with the controller's respective trigger button. Lastly, go back to the Trigger action and on the properties window, select Action Type as "Button". It should look like the image below for the left controller.
 
-![image](/assets/images/oculus/lab2/1.png)
+![image](../../assets/images/oculus/lab2/1.png)
 
 Do the same for the right controller (ensure the action is for the right controller) and we now have Input Action References that correspond to trigger buttons!
 
 Now that we can read the trigger, let's make our first script. Go to the Scripts folder and right-click in the folder and **Create > C# Script** with the name **Hand.cs**. 
 
-![image](/assets/images/oculus/lab2/1_0.png)
+![image](../../assets/images/oculus/lab2/1_0.png)
 
 We’ll put in a public variable that represents the controller this hand is attached to (that’ll be set in the editor).
 
@@ -127,7 +127,7 @@ Switch back to Hand.cs in Visual Studio. Add the following function to the class
 
 This [**function**](https://docs.unity3d.com/ScriptReference/Collider.OnTriggerStay.html) automatically gets called every frame our hand touches a valid object. To delve into what counts as a “valid” object, see the chart below:
 
-![image](/assets/images/oculus/lab2/4.png)
+![image](../../assets/images/oculus/lab2/4.png)
 
 Our hand has no rigidbody (making it static) and has a trigger collider, so it counts as a Static Trigger Collider. By the chart, it’ll send trigger messages upon colliding with our gun, which is a Rigidbody Collider.
 
@@ -153,9 +153,9 @@ Now that we know we’re dealing with a gun, let’s check if requirements two a
 
 Our code is now ready to test, but there’s one thing we need to do in Unity first: set the tag on the gun. Select your Gun object in the hierarchy, and in the Inspector view go to Tag > Add Tag. Press the plus button and create a new tag called “Gun”. Then select your Gun again and tag it as “Gun”.
 
-![image](/assets/images/oculus/lab2/14.png)
+![image](../../assets/images/oculus/lab2/14.png)
 
-![image](/assets/images/oculus/lab2/15.png)
+![image](../../assets/images/oculus/lab2/15.png)
 
 Try it out! Stick your hand into the gun and hold down the grab trigger, and check that you’re repeatedly printing out “Grabbing gun.” when you do so. Now with this verified via script, we can now access the exact Gun's GameObject through the other collider passed through OnTriggerStay.
 
@@ -265,7 +265,7 @@ All three of these things will require use of different Unity components.
 
 In Unity, add an AudioSource component to gameobject Gun. AudioSources are what play sounds in Unity. Turn off “Play On Awake” since we don’t want to hear a gunshot every time we start the game. Then assign the clip “Gunshot” to the Audio Clip field (you can either drag it in from the Sounds folder or click the circle on the right).
 
-![image](/assets/images/oculus/lab2/8.png)
+![image](../../assets/images/oculus/lab2/8.png)
 
 Next in Gun.cs, create a private variable of type AudioSource called audioSource. Then in Start(), initialize that value to reference the component we just created.
 
@@ -299,7 +299,7 @@ Parameters are defined in the controller and can be accessed/modified via script
 
 Take a look at the Animations folder and double-click the “Gun” controller to open up the Animator window.
 
-![image](/assets/images/oculus/lab2/9.png)
+![image](../../assets/images/oculus/lab2/9.png)
 
 Note there are only two “real” states that are connected, Idle and Gun-Anim, and if you click on the Idle state you’ll see it doesn’t have a motion attached in the inspector. The Gun-Anim state does, however: the recoil animation. The green “Entry” state points to what state we start off on.
 
@@ -317,7 +317,7 @@ Let’s put all of this together now. Our gun starts off in the Idle state, and 
 
 **The optional section ends here**. First off, add an Animator component to Gun’s child, Model, and set its controller to Gun (you could also just drag Gun.controller in the animations folder into Model’s inspector view). The animator must go on Model since that’s the 3D model that actually gets animated.
 
-![image](/assets/images/oculus/lab2/10.png)
+![image](../../assets/images/oculus/lab2/10.png)
 
 Now in order to start the recoil animation, we need to set the “Fire” parameter in the Animator component, which we can do in code. Switch to editing Gun.cs. We’ll start off by creating a private variable that holds our animator and initializing it in Start(). Since our animator component is on Model, not Gun, we’ll need to get a reference to Model. transform.Find() looks for a specifically named object in all of the base object’s children.
 
@@ -349,7 +349,7 @@ Just like with animation, Unity has its own complex system for creating and mani
 
 In folder Prefabs/Particle Systems, we’ve provided a gunshot VFX for you called “MuzzleFlashEffect”. Drag it into the editor as a child of Gun. It should already be positioned correctly in front of the gun barrel (where the VFX will play). If not, change its transform to what’s shown below.
 
-![image](/assets/images/oculus/lab2/11.png)
+![image](../../assets/images/oculus/lab2/11.png)
 
 All that’s left is to play the VFX here in script. Switch to editing Gun.cs. Like the previous two sections, we’ll start by creating and initializing a variable that’ll reference the Particle System.
 

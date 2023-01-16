@@ -19,7 +19,7 @@ parent: Final Project
 
 # Project Workflow
 
-![image](/assets/images/project/version-control.jpg)
+![image](../assets/images/project/version-control.jpg)
 
 As you are working in groups, you'll have to establish some sort of workflow that lets everyone work efficiently. Do not be the group that shares various versions of the project through google drive or usb (trust me, we've been there).
 
@@ -47,7 +47,7 @@ Using version control with Unity isn't exactly the same as using it for a "regul
 ## Quick Oculus Project Setup
 
 1. **Mark project as VR ready**. Go to *Edit > Project Settings > Player* and check the box that enables VR support.
-2. **Download Oculus Integration from the** [**Unity Asset Store**](https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022). This is a comprehensive bundle with all of Oculus' side add-ons.
+2. **Download Oculus Integration from the** [**Unity Asset Store**](https:/../assetstore.unity.com/packages/tools/integration/oculus-integration-82022). This is a comprehensive bundle with all of Oculus' side add-ons.
 3. **Replace the Main Camera with the OVRCameraRig prefab**. We recommend using the search bar to find the OVRCameraRig prefab. This prefab represents your VR setup.
 4. **Add in the LocalAvatar prefab**. This prefab gives support to the first-person control scheme (e.g. Touch controllers).
 
@@ -55,7 +55,7 @@ Note that the setup process will be different if you use a virtual reality frame
 
 # Resources
 
-![image](/assets/images/project/neon.jpg)
+![image](../assets/images/project/neon.jpg)
 
 There are a lot of resources out there for you to take advantage of, many of them cheap or free. Don't feel the need to reinvent the wheel - every hour saved by an SDK or assetpackage is an hour you can spend further prototyping your application.
 
@@ -68,7 +68,7 @@ There are a lot of resources out there for you to take advantage of, many of the
 2. [**Unity Asset Store**](https://www.assetstore.unity3d.com/en/). The asset store is a marketplace for people to buy and sell all sorts of Unity assets: script packages, 3D models, 2D art, music, complete games, etc. There is a ton of content here, and a lot of it can be adapted to serve your needs. The picture above, for instance, was built entirely with [**store assets**](https://blogs.unity3d.com/2017/10/04/neon/).
 3. [**VRTK**](https://vrtoolkit.readme.io/). The Virtual Reality Toolkit is a framework that implements a lot of common features in VR applications, including methods of locomotion, object grabbing/throwing, and controller interactions.
 4. [**NewtonVR**](http://www.newtonvr.com/). This is also a VR framework, but one that focuses on object interactions and the physics behind it. It does less than VRTK, but because of it can be less restricting to use.
-5. [**DevAssets**](http://devassets.com/). This site holds a lot of professional level 3D models/assets. It follows the old humble bundle approach: you pay what you want (including $0). Great for quick prototyping while still maintaining visual polish.
+5. [**DevAssets**](http://devassets.com/). This site holds a lot of professional level 3D models../assets. It follows the old humble bundle approach: you pay what you want (including $0). Great for quick prototyping while still maintaining visual polish.
 6. [**Photon**](https://www.photonengine.com/). This is a multiplayer networking framework that builds on top of [**Unity's own networking API**](https://docs-multiplayer.unity3d.com/) (which is also perfectly usable). It supports their Photon Cloud service, which allows you to have up to 20 concurrent users on their dedicated servers, for free.
 7. [**Poly**](https://poly.google.com/). Poly is the content distribution platform for Google's Blocks, a 3D modeling VR application. This is an incredible resource for well-regulated, decent quality, low-poly assets, and a lot of them come under a Creative Commons license!
 8. [**Unity's Create with VR Tutorial**](https://learn.unity.com/course/create-with-vr). There are also instructions here to set up a VR simulator so you don't have to test things with the VR headset. Instructions are in: 1 - VR Basics -> 1.1 VR Project Setup -> 4 Run the app with the device simulator.

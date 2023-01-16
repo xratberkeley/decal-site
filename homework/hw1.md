@@ -23,7 +23,7 @@ Start off by downloading the skeleton asset package [**here**](https://drive.goo
 
 Double-click the HW1 scene to get started. As a reminder, you can navigate the scene view by holding down the right mouse button and using WASD + QE to fly around. Your starting scene should look like this:
 
-![image](../assets/images/hw1-0.png)
+![image](../assets/images/hw1/HW1-0.png)
 
 Note in particular the white ball, the 9 gates, and the green square. **You may not move any of the objects already in the scene.**
 
@@ -35,11 +35,11 @@ As long as you follow the rules above, you may skip the next two sections and in
 
 Let’s start by connecting the starting platform with the first gate. Right click an empty spot within the hierarchy view and select *3D Object > Cube* to create a cube. Select it, then within the Inspector view modify its transform component so that it forms a ramp from the first platform to the gate. For convenience, here are the transform values we used:
 
-![image](/assets/images/hw1/HW1-1-0.png)
+![image](../assets/images/hw1/HW1-1-0.png)
 
 Your scene should then look like this:
 
-![image](/assets/images/hw1/HW1-1.png)
+![image](../assets/images/hw1/HW1-1.png)
 
 Now click play. Our ball now makes it through the first gate!
 
@@ -47,7 +47,7 @@ Now click play. Our ball now makes it through the first gate!
 
 Create another cube. Transform and place it so it acts as another ramp: the ball should will roll off the first gate, land on the ramp and roll into the second gate. It should look like this:
 
-![image](/assets/images/hw1/HW1-2.png)
+![image](../assets/images/hw1/HW1-2.png)
 
 We suggest transforming the cube using the position (w), rotate (e), and scale (r) tools, instead of directly modifying the transform component values. These tools can also be selected in the top left of the screen.
 
@@ -55,7 +55,7 @@ After doing this, take a look at the whole wall. You can see that the ball is su
 
 For the remaining 5 ramps, try using the duplicate tool instead of re-transforming a new cube each time. Select the ramp you just made and use ctrl + d to duplicate it, then modify it from there. The result should look like this: 
 
-![image](/assets/images/hw1/HW1-3.png)
+![image](../assets/images/hw1/HW1-3.png)
 
 Tip: you can duplicate multiple objects at once by holding shift while selecting them.
 
@@ -71,9 +71,9 @@ Place cubes as the picture below shows around the spinner to catch the ball duri
 
 **Warning: Unity's default physics are non-deterministic and somewhat glitchy. You may need to finesse parts of the scene to make things work, such as making the walls thicker, adjusting the speed of the spinner (check out the script attached to it), or adding more guide-rails.**
 
-![image](/assets/images/hw1/HW1-4-1_0.png)
+![image](../assets/images/hw1/HW1-4-1_0.png)
 
-![image](/assets/images/hw1/HW1-4.png)
+![image](../assets/images/hw1/HW1-4.png)
 
 Tip: it might be hard to see how far the spinner extends, as it clips into the other blocks on the left. To remedy this, select the blocks obstructing your view and click the checkmark near the top of the Inspector view. This will disable them temporarily and allow you to work better. Just remember to enable them again when you’re done!
 
@@ -87,7 +87,7 @@ Prefabs are Unity’s way of storing GameObjects for future use. With a prefab, 
 
 In your Project tab, go into the prefabs folder and look for an object called Spinner. The two spinners in our scene are instances of this prefab.
 
-![image](/assets/images/hw1/HW1-5-1.png)
+![image](../assets/images/hw1/HW1-5-1.png)
 
 Now select the Spinner you just modified in your hierarchy. Notice the three buttons near the top next to the word “Prefab”: Select, Revert, and Apply. These buttons do the following:
 

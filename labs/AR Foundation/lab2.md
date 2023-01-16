@@ -28,17 +28,17 @@ Start by right-clicking the AR Camera game object (under AR Session Origin) in t
 
 Go into the Models folder and find the object called “makarov”. This is the 3D model for our gun. Go ahead and drag it onto our newly created empty object, which will parent it under Gun.
 
-![image](/assets/images/ar%20foundation/lab2/gun%20hierarchy.png)
+![image](../../assets/images/ar foundation/lab2/gun hierarchy.png)
 
 Parenting is a concept in Unity that allows us to construct complex objects out of simpler ones and have them all move together as one. An object (call it the child) parented under another object (call it the parent) will have all its transform values defined as relative to that of its parent. This means when the parent moves, scales, or rotates, its child will change along with it.
 
 Let’s rename this newly childed object to “Model”. It’ll start out being far, far too large, so we select its parent, Gun, and scale each of its axes to 0.025. We can move the Gun object around in the scene, which should now move the 3D model around as well. Position/rotate gameobject Gun so it’s about here on the game screen:
 
-![image](/assets/images/ar%20foundation/lab2/gun%20game%20scene.png)
+![image](../../assets/images/ar foundation/lab2/gun game scene.png)
 
 We used this transform on the “Gun” game object:
 
-![image](/assets/images/ar%20foundation/lab2/gun%20transform.png)
+![image](../../assets/images/ar foundation/lab2/gun transform.png)
 
 Depending on your device’s camera/screen, the best gun positioning will vary. It is also possible to script the gun object so that it is scaled in relation to the device’s view so that the gun, on any device, will be in the same position, but we are not going to bother with that in these labs.
 
@@ -84,7 +84,7 @@ All three of these things will require use of different Unity components.
 
 In Unity, add an AudioSource component to gameobject Gun. AudioSources are what play sounds in Unity. Turn off “Play On Awake” since we don’t want to hear a gunshot every time we start the game. Then assign the clip “Gunshot” to the Audio Clip field (you can either drag it in from the Sounds folder or click the circle on the right).
 
-![image](/assets/images/ar%20foundation/lab2/gun%20inspector.png)
+![image](../../assets/images/ar foundation/lab2/gun inspector.png)
 
 Next, in Gun.cs, create a private variable of type AudioSource called audioSource. Then in Start(), initialize that value to reference the component we just created.
 
@@ -117,7 +117,7 @@ Parameters are defined in the controller and can be accessed/modified via script
 
 Take a look at the Animations folder and double-click the “Gun” controller to open up the Animator window.
 
-![image](/assets/images/ar%20foundation/lab2/9.png)
+![image](../../assets/images/ar foundation/lab2/9.png)
 
 Note there are only two “real” states that are connected, Idle and Gun-Anim, and if you click on the Idle state you’ll see it doesn’t have a motion attached in the inspector. The Gun-Anim state does, however: the recoil animation. The green “Entry” state points to what state we start off on.
 
@@ -135,7 +135,7 @@ Let’s put all of this together now. Our gun starts off in the Idle state, and 
 
 First off, add an Animator component to Gun’s child, Model, and set its controller to Gun (you could also just drag Gun.controller in the animations folder into Model’s inspector view). The animator must go on Model since that’s the 3D model that actually gets animated.
 
-![image](/assets/images/ar%20foundation/lab2/10.png)
+![image](../../assets/images/ar foundation/lab2/10.png)
 
 Now in order to start the recoil animation, we need to set the “Fire” parameter in the Animator component, which we can do in code. Switch to editing Gun.cs. We’ll start off by creating a private variable that holds our animator and initializing it in Start(). Since our animator component is on Model, not Gun, we’ll need to get a reference to Model. transform.Find() looks for a specifically named object in all of the base object’s children.
 
@@ -167,11 +167,11 @@ Just like with animation, Unity has its own complex system for creating and mani
 
 In folder Prefabs/Particle Systems, we’ve provided a gunshot VFX for you called “MuzzleFlashEffect”. Drag it into the editor as a child of Gun. Position the MuzzleFlashEffect in front of the gun barrel (where the VFX will play). The size of the particle effect is also extremely small, so we scale the size to 50.
 
-![image](/assets/images/ar%20foundation/lab2/MuzzleFlashEffect.png)
+![image](../../assets/images/ar foundation/lab2/MuzzleFlashEffect.png)
 
 The MuzzleFlashEffect should be around here in front of the gun barrel:
 
-![image](/assets/images/ar%20foundation/lab2/EffectLocation.png)
+![image](../../assets/images/ar foundation/lab2/EffectLocation.png)
 
 All that’s left is to play the VFX here in script. Switch to editing Gun.cs. Like the previous two sections, we’ll start by creating and initializing a variable that’ll reference the Particle System.
 

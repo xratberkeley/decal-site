@@ -19,7 +19,7 @@ By now, you should have a pretty good grasp on Unity from the labs and the other
 
 You'll be building a clone of Pong, the classic Atari game. Download the skeleton package [**here**](https://drive.google.com/file/d/1c7m916mECxBUbsGPNjTeQAhDPE2XL1l5/view?usp=sharing).
 
-![image](/assets/images/hw4/1_5.png)
+![image](../assets/images/hw4/1_5.png)
 
 # Your Task
 
@@ -31,7 +31,7 @@ Now, let's break down a game of Pong. What are the components that work together
 
 # Puck Physics
 
-![image](/assets/images/hw4/2_3.png)
+![image](../assets/images/hw4/2_3.png)
 
 The puck moves across the table, bouncing off of the walls and paddles. With respect to movement, we expect the following from your puck:
 
@@ -46,7 +46,7 @@ In the scene provided, we've taken advantage of Unity physics to both specificat
 
 # Player Interactions
 
-![image](/assets/images/hw4/3_2.png)
+![image](../assets/images/hw4/3_2.png)
 
 The player controls the blue paddle on the left side of the screen. Pressing the **up** or **w** keys on the keyboard should move the paddle up, while pressing **down** or **s** should move it down. The paddle should move at a constant, reasonable speed, and shouldn't clip into or move through the walls.
 
@@ -56,7 +56,7 @@ Utilize Unity's [input manager](https://docs.unity3d.com/Manual/ConventionalGame
 
 # Artificial Intelligence
 
-![image](/assets/images/hw4/4_2.png)
+![image](../assets/images/hw4/4_2.png)
 
 An AI agent controls the red paddle on the right side of the screen. The movement of this paddle is subject to the same constraints as the player - it must move at the same speed as the player, cannot clip or pass through walls, and cannot accelerate.
 

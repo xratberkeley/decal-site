@@ -38,7 +38,7 @@ You can download the skeleton package [**here**](https://drive.google.com/file/d
 
 To start things off, let’s update our monster prefab so that when we spawn it via script it has all the functionality the monster in our scene has. Select the monster gameobject and click Apply in its prefab options.
 
-![image](/assets/images/htc%20vive/lab4/1.PNG)
+![image](../../assets/images/htc vive/lab4/1.PNG)
 
 After you’ve done this, you can remove the monster within the scene - we don’t want to get assassinated the instant we start the game.
 
@@ -86,7 +86,7 @@ InvokeRepeating is a Unity function that will call the function in the first arg
 
 Let’s add the SpawnManager script to our game. Create a new empty gameobject called “SpawnManager”, and attach this script to it. Set Spawn Time to 5 and set the monster prefab correctly.
 
-![image](/assets/images/htc%20vive/lab4/2.PNG)
+![image](../../assets/images/htc vive/lab4/2.PNG)
 
 To fill in Spawn Locations, we’re going to create empty gameobjects (which contain only transforms) and position them around the map where we want monsters to spawn.
 
@@ -94,13 +94,13 @@ But where do we want to spawn them? The locations should be out of the player’
 
 Create a couple empty gameobjects and call them Spawn (you can number them if you wish). Position them around the map such that they’re on the navmesh and out of the player’s line of sight.
 
-![image](/assets/images/htc%20vive/lab4/3.PNG)
-![image](/assets/images/htc%20vive/lab4/4.PNG)
-![image](/assets/images/htc%20vive/lab4/5.PNG)
+![image](../../assets/images/htc vive/lab4/3.PNG)
+![image](../../assets/images/htc vive/lab4/4.PNG)
+![image](../../assets/images/htc vive/lab4/5.PNG)
 
 Once you’re satisfied with your spawns, select SpawnManager and drag the spawns onto the Spawn Locations array to add to the list.
 
-![image](/assets/images/htc%20vive/lab4/6.PNG)
+![image](../../assets/images/htc vive/lab4/6.PNG)
 
 Give it a shot! Starting the game now should cause a monster to spawn once every 5 seconds, and… walk in place. Time for an exercise in debugging.
 

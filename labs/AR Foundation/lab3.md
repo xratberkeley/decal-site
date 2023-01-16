@@ -30,7 +30,7 @@ In this lab, we’ll focus on the main antagonist of our game: the monster. Befo
 
 Open the provided Lab scene in the assets folder. Within the prefabs folder, we’ve provided a Monster prefab for you already. Double-click the environment prefab to open up the prefab and drag the monster prefab into the environment prefab hierarchy so that the monster is a child of the environment. Turn it around to face the player.
 
-![image](/assets/images/ar%20foundation/lab3/1_2.png)
+![image](../../assets/images/ar foundation/lab3/1_2.png)
 
 As you’ll notice, the monster gameobject has two children already: hips and mesh_1. mesh_1 contains the mesh renderer that gives it the look it has, while the actual mesh itself is contained in the tree-like structure within hips, which contains the positions of all the bones in our monster’s skeletons (also called the rig).
 
@@ -42,7 +42,7 @@ Moving our monster is a deceptively challenging task when there are obstacles in
 
 What we’re going to do is build what’s called a navigation mesh, or navmesh for short. A navmesh is a map of the environment that enables supported agents, called navmesh agents, to traverse the environment. By building this map ahead of time, agents won’t have to repeatedly compute where they can and cannot go while the game is running.
 
-![image](/assets/images/ar%20foundation/lab3/2_1.png)
+![image](../../assets/images/ar foundation/lab3/2_1.png)
 
 You can read more about Unity’s navigation system [here](https://docs.unity3d.com/Manual/Navigation.html).
 
@@ -56,13 +56,13 @@ To start off, we must mark the parts of the scene that our monster needs to trav
 
 Next, create a new gameobject in the environment prefab hierarchy named NavMesh. Add the component NavMeshSurface to this gameobject. In the inspector click on Agent Type > Open Agent Settings. Navmeshes are built given certain assumptions about the agent traversing it. As you can see, Unity assumes our agent is a cylinder of certain radius and height. This will let you edit the characteristics of our agent. We’ll only change one of these settings: set Agent Radius to 0.4 to better fit our monster.
 
-![image](/assets/images/ar%20foundation/lab3/NavMeshSurface.png)
+![image](../../assets/images/ar foundation/lab3/NavMeshSurface.png)
 
 In our game we will only have one type of agent running around the map. However, the navmesh supports many different agent types. You can create different agents with different heights, step heights, and abilities. For instance, you can have different agents navigate different parts of the map, lava monsters, flying characters, etc. Feel free to explore this when you make your own game!
 
 Return to the inspector and click bake at the bottom of the NavMeshSurface component. This should build the navmesh into our prefab and you should now see a navmesh object in the prefabs folder.
 
-![image](/assets/images/ar%20foundation/lab3/4_0.png)
+![image](../../assets/images/ar foundation/lab3/4_0.png)
 
 # Moving the Monster
 
@@ -101,7 +101,7 @@ Then to get the monster moving, all we have to do is add this line to Update(), 
 
 It looks a little odd to see our monster power-slide to its destination, so we’re going to add in animation support. Add an Animator component to the Monster. We’ve provided a Controller for you in Assets > Animations > Monster and an Avatar (the mapping between Unity’s normal bone structure and a special one) in Models > Monster > MonsterAvatar. Drag those into their fields.
 
-![image](/assets/images/ar%20foundation/lab3/5.png)
+![image](../../assets/images/ar foundation/lab3/5.png)
 
 Take a look at the monster controller in the Animator window. It’s a little more complicated than the gun controller, but not by much. Notice that we start off in the “Walking” state. If you press play now, the monster should walk towards you with a lumbering walk animation.
 
@@ -192,7 +192,7 @@ Now that the monster can attack us, it’s only far that we be able to fight bac
 
 Start by adding a capsule collider to the monster. Set the radius to 1, the height to 3, the center to 1.5, and mark it as a trigger so it doesn’t collide with the environment. It should just about encapsulate the monster. You can make the collider larger or smaller depending on how difficult you want hitting the monster to be.
 
-![image](/assets/images/ar%20foundation/lab3/7_0.png)
+![image](../../assets/images/ar foundation/lab3/7_0.png)
 
 Next, switch to editing the Gun.cs script. We’re going to add a raycast check to Fire() to check if we’ve hit a monster. I won’t pretend to be able to explain raycasting better than Unity itself, so before looking at the code below, watch the first minute and a half of [**this video**](https://unity3d.com/learn/tutorials/topics/physics/raycasting). **Raycasts can be confusing intuitively, so don’t be afraid to ask for clarification!**
 
@@ -330,7 +330,7 @@ Filling in the Die() function is fairly straightforward:
 
 If you try the game now, you should be able to see all this happen after shooting the monster five times! You should also notice an error message in the console:
 
-![image](/assets/images/ar%20foundation/lab3/8_1.png)
+![image](../../assets/images/ar foundation/lab3/8_1.png)
 
 This is an animation event hooked up to the end of the death animation. If we were to just let the monster sit there forever, the corpses would end up glitching into one another and lagging the game. So we’re now going to use this animation event to make dead monsters sink through the floor and then disappear after dieing. Stub in the public StartSinking() function.
 

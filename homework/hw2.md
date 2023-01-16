@@ -17,7 +17,7 @@ parent: Homework
 
 Your second assignment is to create your very own music visualizer! It will look something like this:
 
-![image](/assets/images/hw2/1.png)
+![image](../assets/images/hw2/1.png)
 
 This assignment will be a review of some of the Unity editor tools you have practiced in HW1, but more importantly, an introduction on using C# scripts to manipulate gameobjects.
 
@@ -31,7 +31,7 @@ Every sound that enters your ear is actually a sum of different frequencies. Pur
 
 The [**Fast Fourier Transform**](https://en.wikipedia.org/wiki/Fast_Fourier_transform) algorithm is the exact reverse - it takes a complex waveform and decomposes it into its base frequencies. Take the picture below as an example, which looks at a simple song from various perspectives.
 
-![image](/assets/images/hw2/2_0.png)
+![image](../assets/images/hw2/2_0.png)
 
 What you physically hear is the result, which is the sum of the pure bass, kick, synth, and harmonics waveforms.
 
@@ -49,7 +49,7 @@ We will start by creating an empty gameobject named “SpectrumAnalyzer” and a
 
 As a side tangent, you may change your script editor by going to *Edit > Preferences > External Tools*.
 
-![image](/assets/images/hw2/6.png)
+![image](../assets/images/hw2/6.png)
 
 Start off by adding two variables to the script, above the Start() function.
 
@@ -80,7 +80,7 @@ Since we’ll want to update our spectrum samples every frame, put GetSpectrumAu
 
 Save your work and switch back to Unity. Select your SpectrumAnalyzer gameobject and set the AudioClip to whichever audio file you want to visualize. We have provided a sample audiofile in the Audio folder, in case you don’t have any. Here are some links to music if you’d like to download some: [1](https://www.bensound.com/), [2](http://www.purple-planet.com/), [3](http://freemusicarchive.org/), [4](https://soundcloud.com/royalty-free-audio-loops).
 
-![image](/assets/images/hw2/7.png)
+![image](../assets/images/hw2/7.png)
 
 # Visualizing Spectrum Data
 
@@ -88,7 +88,7 @@ Next, we’re going to visualize each of the 512 spectrum samples using cubes.
 
 In *Assets > Scripts*, find and open the script “Instantiate512cubes”. This script starts off by spawning 512 cubes in a circle such that they all face the center. It then takes the sample data every frame and represents it using the heights of the cubes. The effect will be something like this:
 
-![image](/assets/images/hw2/8_0.png)
+![image](../assets/images/hw2/8_0.png)
 
 There are two sections of this script for you to complete on your own. Read the comments for more details on what each section does and hints on how to do it.
 
@@ -116,7 +116,7 @@ We’re now going to fix this issue by collating the 512 samples into just 8 bin
 6. Presence: 4k - 6k Hz
 7. Brilliance: 6k-  20k Hz
 
-![image](/assets/images/hw2/3.png)
+![image](../assets/images/hw2/3.png)
 
 Notice how the regions roughly increase in size as they increase in frequency. Inspired by this, we’ll create 8 bins where higher frequency bins absorb more samples. We have a total range of 20k - 20 = 19980 Hz to cover, and with 512 samples each sample covers 19980 / 512 = 39 Hz. We’ll define the bins as follows:
 
@@ -186,7 +186,7 @@ Finally, let’s create cubes to visualize the calculated values for each bin.
 
 Let’s use the cube prefab again, and place eight of them in the middle of the scene. You can simply drag the prefab into the Hierarchy or the scene view. Scale them so they’re visible in the game view.
 
-![image](/assets/images/hw2/10_0.png)
+![image](../assets/images/hw2/10_0.png)
 
 We’ll need a script to read the values from audioBands in SpectrumAnalyzer and represent them as heights for each cube. Create a C# script named “Cube”, and add the following variables to it:
 
@@ -198,7 +198,7 @@ The variable band represents which bin this cube represents. startScale represen
 
 Fill out the needed functionality on your own. You can refer to Instantiate512cube for help, since the functionality is similar. When you’re done, attach the script to each of the cubes and set the editor values appropriately (remember, you can modify multiple objects at once via shift/ctrl select). You do not have to use the values shown below.
 
-![image](/assets/images/hw2/9_0.png)
+![image](../assets/images/hw2/9_0.png)
 
 Now try out your music visualizer!
 

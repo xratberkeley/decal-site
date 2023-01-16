@@ -8,7 +8,38 @@ nav_exclude: true
 #   name: Just the Class
 ---
 
-# Just the Class
+
+# How to Update Decal site
+
+Only a few people have access to update the website now as the repo is hosted on the Extended Reality @ Berkeley GitHub organization.
+
+Let me know if you need to be added to the organization to update the website.
+
+---
+
+1. After previewing your site locally to make sure everything looks good, you will need to build the site by running `JEKYLL_ENV=production bundle exec jekyll b`. This will build to the directory `_site`.
+
+2. Copy all the content inside `_site` (don't copy the `_site` folder itself) into the `decal` folder in the website GitHub repository. Commit & push to the website repo.
+
+3. To modify the live website, you will also have to pull the changes from within OCF, our hosting platform. Instructions to do that are on the website repo.
+
+
+## Building and previewing your site locally
+
+[https://just-the-docs.github.io/just-the-docs-template/](https://just-the-docs.github.io/just-the-docs-template/)
+
+Assuming [Jekyll] and [Bundler] are installed on your computer:
+
+1.  Change your working directory to the root directory of your site.
+
+2.  Run `bundle install`.
+
+3.  Run `bundle exec jekyll serve` to build your site and preview it at `localhost:4000`.
+
+    The built site is stored in the directory `_site`.
+
+
+### Template Credits: Just the Class
 
 Just the Class is a GitHub Pages template developed for the purpose of quickly deploying course websites. In addition to serving plain web pages and files, it provides a boilerplate for:
 
@@ -22,18 +53,3 @@ Just the Class is a template that extends the popular [Just the Docs](https://gi
 - automatic [navigation structure](https://just-the-docs.github.io/just-the-docs/docs/navigation-structure/),
 - instant, full-text [search](https://just-the-docs.github.io/just-the-docs/docs/search/) and page indexing,
 - and a set of [UI components](https://just-the-docs.github.io/just-the-docs/docs/ui-components) and authoring [utilities](https://just-the-docs.github.io/just-the-docs/docs/utilities).
-
-## Getting Started
-
-Getting started with Just the Class is simple.
-
-1. Create a [new repository based on Just the Class](https://github.com/kevinlin1/just-the-class/generate).
-1. Update `_config.yml` and `README.md` with your course information. [Be sure to update the url and baseurl](https://mademistakes.com/mastering-jekyll/site-url-baseurl/).
-1. Configure a [publishing source for GitHub Pages](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages). Your course website is now live!
-1. Edit and create `.md` [Markdown files](https://guides.github.com/features/mastering-markdown/) to add more content pages.
-
-Just the Class has been used by instructors at Stanford University ([CS 161](https://stanford-cs161.github.io/winter2021/)), UC Berkeley ([Data 100](https://ds100.org/fa21/)), UC Santa Barbara ([CSW8](https://ucsb-csw8.github.io/s22/)), Northeastern University ([CS4530/5500](https://neu-se.github.io/CS4530-CS5500-Spring-2021/)), and Carnegie Mellon University ([17-450/17-950](https://cmu-crafting-software.github.io/)). Share your course website and find more examples in the [show and tell discussion](https://github.com/kevinlin1/just-the-class/discussions/categories/show-and-tell)!
-
-### Local development environment
-
-Just the Class requires no special Jekyll plugins and can run on GitHub Pages' standard Jekyll compiler. To setup a local development environment, clone your template repository and follow the GitHub Docs on [Testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll).

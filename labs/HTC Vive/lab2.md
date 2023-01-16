@@ -20,7 +20,7 @@ In this lab, we’ll focus completely on the gun. By the end of the lab, you sho
 
 How can we interact with our gun, anyway? If you hold an HTC Vive controller in your hand, you’ll notice that there are two main triggers that we can press. One is with the middle finger, called the Grip Trigger, and the other is with the index finger, called the Hair Trigger.
 
-![image](/assets/images/htc%20vive/lab2/Vive%20Input.png)
+![image](../../assets/images/htc vive/lab2/Vive Input.png)
 [*Image Source*](https://www.raywenderlich.com/149239/htc-vive-tutorial-unity)
 
 For our gun, we want to implement the following functionality:
@@ -39,7 +39,7 @@ The triggers on the Touch controllers are like buttons, which only have an on an
 
 Let’s start this off by creating our first script. Go into the Scripts folder, right-click an empty space within, select Create > C# Script, and name it “Hand”. Double-click the file to open it (likely in Visual Studio).
 
-![image](/assets/images/htc%20vive/lab2/1.PNG)
+![image](../../assets/images/htc vive/lab2/1.PNG)
 
 *Unity automatically starts you out with some boilerplate code.*
 
@@ -100,8 +100,8 @@ Next, add the following lines to the end of the Update() function so we can late
 
 Switch back to Unity now. We’re going to add an instance of our new Hand script to each of our hands. To do so, look for CameraRig’s children, Controller (left) and Controller (right) These represent your controllers in the game. Add the script as a component to both of them (you can use the same Add Component button to search for “Hand”). Your Inspector view for these objects should now look like this:
 
-![image](/assets/images/htc%20vive/lab2/Controller%20Left%20Lab%202.png)
-![image](/assets/images/htc%20vive/lab2/Controller%20Right%20Lab%202.png)
+![image](../../assets/images/htc vive/lab2/Controller Left Lab 2.png)
+![image](../../assets/images/htc vive/lab2/Controller Right Lab 2.png)
 
 Finally, run your project but don’t put on the headset, and open the Console tab (next to Project). You should be able to play with the controller triggers and see the values change on the console.
 
@@ -135,7 +135,7 @@ Switch back to Hand.cs in Visual Studio. Add the following function to the class
 
 This [function](https://docs.unity3d.com/ScriptReference/Collider.OnTriggerStay.html) automatically gets called every frame our hand touches a valid object. To delve into what counts as a “valid” object, see the chart below:
 
-![image](/assets/images/htc%20vive/lab2/Lab%202%20Trigger%20Chart.png)
+![image](../../assets/images/htc vive/lab2/Lab 2 Trigger Chart.png)
 
 Our hand has no rigidbody (making it static) and has a trigger collider, so it counts as a Static Trigger Collider. By the chart, it’ll send trigger messages upon colliding with our gun, which is a Rigidbody Collider.
 
@@ -167,7 +167,7 @@ Now that we know we’re dealing with a gun, let’s check if requirements two a
 
 Our code is now ready to test, but there’s one thing we need to do in Unity first: set the tag on the gun. Select your Gun object in the hierarchy, and in Inspector view go to *Tag > Add Tag*. Press the plus button and create a new tag called “Gun”. Then select your Gun again and tag it as “Gun”.
 
-![image](/assets/images/htc%20vive/lab2/Image%20Lab%202.png)
+![image](../../assets/images/htc vive/lab2/Image Lab 2.png)
 
 Try it out! Stick your hand into the gun and hold down the hand trigger, and check that you’re repeatedly printing out “Grabbing gun.” when you do so.
 
@@ -457,7 +457,7 @@ All three of these things will require use of different Unity components.
 
 In Unity, add an AudioSource component to gameobject Gun. AudioSources are what play sounds in Unity. Turn off “Play On Awake” since we don’t want to hear a gunshot every time we start the game. Then assign the clip “Gunshot” to the Audio Clip field (you can either drag it in from the Sounds folder or click the circle on the right).
 
-![image](/assets/images/htc%20vive/lab2/8.png)
+![image](../../assets/images/htc vive/lab2/8.png)
 
 Next in Gun.cs, create a private variable of type AudioSource called audioSource. Then in Start(), initialize that value to reference the component we just created.
 
@@ -498,7 +498,7 @@ Parameters are defined in the controller and can be accessed/modified via script
 
 Take a look at the Animations folder and double-click the “Gun” controller to open up the Animator window.
 
-![image](/assets/images/htc%20vive/lab2/9.png)
+![image](../../assets/images/htc vive/lab2/9.png)
 
 Note there are only two “real” states that are connected, Idle and Gun-Anim, and if you click on the Idle state you’ll see it doesn’t have a motion attached in the inspector. The Gun-Anim state does, however: the recoil animation. The green “Entry” state points to what state we start off on.
 
@@ -516,7 +516,7 @@ Let’s put all of this together now. Our gun starts off in the Idle state, and 
 
 Instruction starts again here. First off, add an Animator component to Gun’s child, Model, and set its controller to Gun (you could also just drag Gun.controller in the animations folder into Model’s inspector view). The animator must go on Model since that’s the 3D model that actually gets animated.
 
-![image](/assets/images/htc%20vive/lab2/10.png)
+![image](../../assets/images/htc vive/lab2/10.png)
 
 Now in order to start the recoil animation, we need to set the “Fire” parameter in the Animator component, which we can do in code. Switch to editing Gun.cs. We’ll start off by creating a private variable that holds our animator and initializing it in Start(). Since our animator component is on Model, not Gun, we’ll need to get a reference to Model. transform.Find() looks for a specifically named object in all of the base object’s children. 
 
@@ -556,7 +556,7 @@ Just like with animation, Unity has its own complex system for creating and mani
 
 In folder Prefabs/Particle Systems, we’ve provided a gunshot VFX for you called “MuzzleFlashEffect”. Drag it into the editor as a child of Gun. It should already be positioned correctly in front of the gun barrel (where the VFX will play). If not, change its transform to what’s shown below.
 
-![image](/assets/images/htc%20vive/lab2/11.png)
+![image](../../assets/images/htc vive/lab2/11.png)
 
 All that’s left is to play the VFX here in script. Switch to editing Gun.cs. Like the previous two sections, we’ll start by creating and initializing a variable that’ll reference the Particle System.
 

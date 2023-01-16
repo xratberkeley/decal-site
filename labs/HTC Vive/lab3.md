@@ -34,7 +34,7 @@ You can download the skeleton assetpackage [**here**](https://drive.google.com/o
 
 Open the provided Lab scene in the assets folder. Within the prefabs folder, we’ve provided a Monster prefab for you already. Go ahead and drag it into the scene and turn it around to face the player.
 
-![image](/assets/images/htc%20vive/lab3/1.PNG)
+![image](../../assets/images/htc vive/lab3/1.PNG)
 
 As you’ll notice, the monster gameobject has two children already: hips and mesh_1. mesh_1 contains the mesh renderer that gives it the look it has, while the actual mesh itself is contained in the tree-like structure within hips, which contains the positions of all the bones in our monster’s skeletons (also called the rig).
 
@@ -46,7 +46,7 @@ Moving our monster is a deceptively challenging task when there are obstacles in
 
 What we’re going to do is build what’s called a navigation mesh, or navmesh for short. A navmesh is a map of the environment that enables supported agents, called navmesh agents, to traverse the environment. By building this map ahead of time, agents won’t have to repeatedly compute where they can and cannot go while the game is running.
 
-![image](/assets/images/htc%20vive/lab3/2.PNG)
+![image](../../assets/images/htc vive/lab3/2.PNG)
 
 You can read more about Unity’s navigation system [here](https://docs.unity3d.com/Manual/Navigation.html).
 
@@ -54,11 +54,11 @@ To start off, we must mark the parts of the scene that our monster needs to trav
 
 Next, open up the navigation window via *Window > Navigation* and click on the “Bake” tab. This tab is where we can “bake” a navmesh into the environment for later use. Navmeshes are built given certain assumptions about the agent traversing it. As you can see in the “Baked Agent Size” section, Unity assumes our agent is a cylinder of certain radius and height.
 
-![image](/assets/images/htc%20vive/lab3/3.PNG)
+![image](../../assets/images/htc vive/lab3/3.PNG)
 
 We’ll only change one of these settings: set Agent Radius to 0.4 to better fit our monster. Then hit bake. You should see the map get covered in blue, representing all the traversable parts of the map.
 
-![image](/assets/images/htc%20vive/lab3/4.PNG)
+![image](../../assets/images/htc vive/lab3/4.PNG)
 
 # Moving the Monster
 
@@ -114,7 +114,7 @@ In Unity, add this script to the Monster gameobject. For the player field, drag 
 
 It looks a little odd to see our monster power-slide to its destination, so we’re going to add in animation support. Add an Animator component to the Monster. We’ve provided a Controller for you in *Assets > Animations > Monster* and an Avatar (the mapping between Unity’s normal bone structure and a special one) in *Models > Monster > MonsterAvatar*. Drag those into their fields.
 
-![image](/assets/images/htc%20vive/lab3/5.PNG)
+![image](../../assets/images/htc vive/lab3/5.PNG)
 
 Take a look at the monster controller in the Animator window. It’s a little more complicated than the gun controller, but not by much. Notice that we start off in the “Walking” state. If you press play now, the monster should walk towards you with a lumbering walk animation.
 
@@ -212,7 +212,7 @@ Use this distance to check whether or not we should transition into attacking.
 
 Save your work and try it in the editor. The monster should walk towards you, then stop some distance away and start hitting you with its fists. Whenever it hits you, an error should also pop up in the console:
 
-![image](/assets/images/htc%20vive/lab3/6.PNG)
+![image](../../assets/images/htc vive/lab3/6.PNG)
 
 Unity allows you to hook up [animation events](https://docs.unity3d.com/Manual/AnimationEventsOnImportedClips.html) to certain points in time within an animation. These events take in a function name. When the animation plays in-game and reaches that point in time, Unity will look for that function and call it. In this case, there’s an animation event attached to the moment the monster’s fists hit the ground, with function name “Attack”. Since we don’t have a function called “Attack” yet, it raises this error. Stub in the Attack() function to fix this; we’ll just play the hitClip sound for now.
 
@@ -236,7 +236,7 @@ Now that the monster can attack us, it’s only far that we be able to fight bac
 
 Start by adding a capsule collider to the monster. Set the radius to 1, the height to 3, the center to 1.5, and mark it as a trigger so it doesn’t collide with the environment. It should just about encapsulate the monster.
 
-![image](/assets/images/htc%20vive/lab3/7.PNG)
+![image](../../assets/images/htc vive/lab3/7.PNG)
 
 Next, switch to editing the Gun.cs script. We’re going to add a raycast check to Fire() to check if we’ve hit a monster. I won’t pretend to be able to explain raycasting better than Unity itself, so before looking at the code below, watch the first minute and a half of this video. Raycasts can be confusing intuitively, so don’t be afraid to ask for clarification!
 
@@ -421,7 +421,7 @@ Filling in the Die() function is fairly straightforward:
 
 If you try the game now, you should be able to see all this happen after shooting the monster five times! You should also notice an error message in the console:
 
-![image](/assets/images/htc%20vive/lab3/8.PNG)
+![image](../../assets/images/htc vive/lab3/8.PNG)
 
 This is an animation event hooked up to the end of the death animation. If we were to just let the monster sit there forever, the corpses would end up glitching into one another and lagging the game. So we’re now going to use this animation event to make dead monsters sink through the floor and then disappear after dieing. Stub in the public StartSinking() function.
 

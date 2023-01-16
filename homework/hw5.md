@@ -21,7 +21,7 @@ You'll be building the functionality of two different guns: one of which is the 
 
 You can download the skeleton project [**here**](https://drive.google.com/open?id=1R59r77jqtPv-28q-KRDHP9Ca2Hi24oYd).
 
-![image](/assets/images/hw5/GunHWSetup.png)
+![image](../assets/images/hw5/GunHWSetup.png)
 
 # Overview
 
@@ -35,7 +35,7 @@ When you're done with both parts of the homework, you should have:
 
 You may find this chart helpful:
 
-![image](/assets/images/hw5/c8f7e291163bf6b68d917f466dceffef.png)
+![image](../assets/images/hw5/c8f7e291163bf6b68d917f466dceffef.png)
 
 You can learn more here: [https://docs.unity3d.com/Manual/CollidersOverview.html](https://docs.unity3d.com/Manual/CollidersOverview.html)
 
@@ -53,7 +53,7 @@ Your job is to make the flare gun fire a visible projectile (a flare bullet) whi
 
 The models and controls are already setup for you, so your job is to handle all the scripting. The flare gun and the flare are separate entities and have their own scripts, so make sure you are separating their functions. For example, does the flare fun need to know anything about the target? Probably not, since the flare bullet will be what actually collides with and interacts with the target. Take a look at **FlareGunFiring.cs** and **FlareBullet.cs** for details in the code comments. Like the monster in the lab, remember to put a tag on the target! Feel free to mess around with the effects and sounds.
 
-![image](/assets/images/hw5/FlareGun.png)
+![image](../assets/images/hw5/FlareGun.png)
 
 Once you have the flare gun shooting and flare bullets and incrementing the hit counter, you have finished part 1!
 
@@ -67,7 +67,7 @@ Instead of a projectile, the laser gun should fire a visible (or can be invisibl
 
 For this part, you will write the code in **StepTriggerScript.cs** to call the steppedOnTrigger() method (already made for you) when the player steps on the green pad. Refer to the collision chart to decide which colliders will work for this. You will need to make a new method for this functionality. 
 
-![image](/assets/images/hw5/LaserGunShooting.png)
+![image](../assets/images/hw5/LaserGunShooting.png)
 
 If you have the laser gun shooting and updating the target's hit counter correctly, and the green pressure plate displaying 'Stepped on Trigger!', you have finished part 2.
 

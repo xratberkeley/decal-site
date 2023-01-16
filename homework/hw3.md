@@ -17,7 +17,7 @@ parent: Homework
 
 This homework assignment is to create your own fractal generator. It will look something like this:
 
-![image](/assets/images/hw3/2.png)
+![image](../assets/images/hw3/2.png)
 
 In this assignment, we will explore recursion within Unity by writing scripts that’ll build fractals for us! Fractals pair great with recursion because recursion can exploit and represent its hierarchical and repetitive characteristic very naturally.
 
@@ -25,7 +25,7 @@ The fractal we want to construct for this assignment is fairly simple. Consider 
 
 Consider a top down view of a parent and its direct children:
 
-![image](/assets/images/hw3/1_1.png)
+![image](../assets/images/hw3/1_1.png)
 
 As you can see, the light grey children are half the size as the dark grey parent. Note that each child is right next to the parent - its face touches the parent’s face, but the two don’t overlap. The child in the center is no exception; it sits on top of the parent.
 
@@ -37,7 +37,7 @@ For testing purposes, we’ve provided you with a script to let you to zoom/pan 
 
 Within the Main Camera’s inspector, we would also recommend that you change the Clear Flags option from “Skybox” to “Solid Color”. This will make your fractal easier to see.
 
-![image](/assets/images/hw3/3.png)
+![image](../assets/images/hw3/3.png)
 
 You’ll also want to enable automatic lighting so your scene gets proper lighting. Do so through Windows > Lighting > Settings > Auto Generate.
 
@@ -93,7 +93,7 @@ In particular, you’ll have to modify the gameobject’s transform such that it
 
 Once you’ve successfully completed this section, you’ll see something very similar to the image below. Notice how there’s no visible gaps between the children and parent.
 
-![image](/assets/images/hw3/4.png)
+![image](../assets/images/hw3/4.png)
 
 # Recursive Attributes
 
@@ -111,17 +111,17 @@ We’ve already completed three of the attributes for you: the mesh, materials, 
 
 Once you’ve done so, start by verifying that your implementation for transform.parent is correct. If you’ve implemented it correctly, your children will correctly “nest” within your parent in the hierarchy. Your hierarchy should look something like the one below!
 
-![image](/assets/images/hw3/5.png)
+![image](../assets/images/hw3/5.png)
 
 Now, we can test everything else. Change the maxDepth in scene’s Fractal gameobject from 1 to 5. Assuming everything was implemented correctly, you should see something very similar to the image below.
 
-![image](/assets/images/hw3/6.png)
+![image](../assets/images/hw3/6.png)
 
 Notice the beautiful nesting structure that we’ve created!
 
 Finally, verify that your implementation for localRotation is correct. As you can observe from the image above, the children are rotating along the face of the parent. Make sure your children are doing so as well, and not rotating “into” the parent. To make it more clear, here is an example where the localRotation was set **incorrectly**:
 
-![image](/assets/images/hw3/7.png)
+![image](../assets/images/hw3/7.png)
 
 Congratulations! You now have a fully operating fractal!
 
