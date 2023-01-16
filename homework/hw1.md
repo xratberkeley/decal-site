@@ -23,7 +23,7 @@ Start off by downloading the skeleton asset package [**here**](https://drive.goo
 
 Double-click the HW1 scene to get started. As a reminder, you can navigate the scene view by holding down the right mouse button and using WASD + QE to fly around. Your starting scene should look like this:
 
-![image](/assets/images/hw1/HW1-0.png)
+![image](../assets/images/hw1-0.png)
 
 Note in particular the white ball, the 9 gates, and the green square. **You may not move any of the objects already in the scene.**
 
