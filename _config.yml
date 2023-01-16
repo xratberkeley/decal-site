@@ -17,7 +17,7 @@ title: Extended Reality Development
 #tagline: A Jekyll template for course websites
 description: A modern, highly customizable, responsive Jekyll template for course websites
 #author: Kevin Lin
-baseurl: '/decal' # the subpath of your site, e.g. /blog
+baseurl: '/decal2' # the subpath of your site, e.g. /blog
 url: 'https://xr.berkeley.edu' # the base hostname & protocol for your site, e.g. http://example.com
 exclude: ["Gemfile", "Gemfile.lock", "LICENSE"]
 
