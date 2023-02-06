@@ -7,7 +7,7 @@ has_children: false
 
 # Lectures
 
-- [Lecture 0: Introduction to Virtual Reality](../assets/lectures/%5BFA22%5D%20Lecture%200_%20Introduction%20to%20Extended%20Reality.pdf)
+- [Lecture 0: Introduction to Virtual Reality](../assets/lectures/%5BSP23%5D%20Lecture%200_%20Introduction%20to%20Extended%20Reality.pdf)
 
 - [Lecture 1: Fundamentals of Virtual Reality](../assets/lectures/%5BFA22%5D%20Lecture%201_%20Fundamentals%20of%20Extended%20Reality.pdf)
 

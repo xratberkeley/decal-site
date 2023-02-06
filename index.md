@@ -18,7 +18,7 @@ This semester, the course will teach students to develop VR applications in head
 
 The course consists of lectures, labs, homework, and a final project. Each class will include a lecture on VR/AR theories and practices, followed by a "follow-along" style lab. Homework will be weekly for the first half of the course and will consist of practical Unity assignments. Halfway through the semester, classes will transition to giving students time to work in teams on their final projects until the end of the semester.
 
-Click [here](https://docs.google.com/document/d/1ZAtxD5himg_H8Acs5ZtrJr6lo9DTRHOY8ksaisNtU60/edit?usp=sharing) for the full course syllabus.
+Click [here](https://docs.google.com/document/d/1huxZqgTeCkw_s2-Sz9epXBjSAvz5Ej7BW3CXJYCf4O4/edit?usp=sharing) for the full course syllabus.
 
 If you're interested in making projects with a team, please apply to the XR@B club! [https://xr.berkeley.edu/](https://xr.berkeley.edu/)
 
