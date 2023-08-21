@@ -23,4 +23,4 @@ Click [here](https://docs.google.com/document/d/1huxZqgTeCkw_s2-Sz9epXBjSAvz5Ej7
 If you're interested in making projects with a team, please apply to the XR@B club! [https://xr.berkeley.edu/](https://xr.berkeley.edu/)
 
 ## Announcements:
-**Applications for Fall 2023 are opened! [Apply here](https://forms.gle/cEDkvHTXWG3f5An36).
+**Applications for Fall 2023 are opened! [Apply here](https://forms.gle/cEDkvHTXWG3f5An36).**
