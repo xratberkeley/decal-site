@@ -16,6 +16,8 @@ This semester, the course will teach students to develop VR applications in head
 
 **This 3-unit course will be held on Monday’s or Tuesday’s 6:00 - 8:00 PM PST in-person at Jacobs 10C (basement). You will be assigned one section, and you do not need to attend the other day's section.**
 
+NOTE: The first class starts next monday, September 11th.
+
 The course consists of lectures, labs, homework, and a final project. Each class will include a lecture on VR/AR theories and practices, followed by a "follow-along" style lab. Homework will be weekly for the first half of the course and will consist of practical Unity assignments. Halfway through the semester, classes will transition to giving students time to work in teams on their final projects until the end of the semester.
 
 Click [here](https://docs.google.com/document/d/1huxZqgTeCkw_s2-Sz9epXBjSAvz5Ej7BW3CXJYCf4O4/edit?usp=sharing) for the full course syllabus.
