@@ -38,9 +38,13 @@ We can divide the game into several distinct chunks. Each lab will focus on a si
 
 For this lab, we will focus on the initial setup of the project and the creation of the environment.
 
+# Introduction to the Android Module
+
+In homework 1, we wanted you to download and install the WebGL module so that you can build to a site where anyone can easily test your scene. Here, we will want to install the Android module. In the Unity Hub, go to Installs and press the settings icon next to one of the Unity Editors you have been using. Then, add **Android Build Support** with 'Open JDK' and 'Android SDK & NDK Tools' selected and continue to install.
+
 # Project Setup
 
-First, download the project skeleton [**here**](https://drive.google.com/file/d/19s386jba_GvCYvk4_YbZbQpaFumhpYjd/view?usp=sharing) (or check if it's already been downloaded onto your computer). This is a unitypackage that contains all the assets and resources needed to build the project. Next, create a new project and import the downloaded unitypackage. You can do this through Assets > Import Package > Custom Package.
+First, download the project skeleton [**here**](https://drive.google.com/file/d/19s386jba_GvCYvk4_YbZbQpaFumhpYjd/view?usp=sharing) (or check if it's already been downloaded onto your computer). This is a unitypackage that contains all the assets and resources needed to build the project. Next, create a new 3D Project, and make sure that you have platform selected as Android. Import the downloaded unitypackage. You can do this through Assets > Import Package > Custom Package.
 
 Importing might take a while, as Unity will have to load and configure a lot of textures and libraries. In particular, if you see Unity getting stuck importing something called “AvatarSurfaceShader”, don’t be alarmed - that particular asset will usually take a long time.
 
@@ -90,13 +94,15 @@ Make sure the environment’s transform component in the Inspector view is zeroe
 
 If your values don’t match, click the gear in the top right and hit “Reset”.
 
-You’ll notice that the lighting is off - the buildings are way too dark and shadows aren’t being cast properly. We’ll fix that, but first we’ll change the skybox (the textures that surround the scene) to something that looks more like the night sky.
+You’ll notice that the lighting is off - the buildings might be too dark and shadows aren’t being cast properly. We’ll fix that, but first we’ll change the skybox (the textures that surround the scene) to something that looks more like the night sky.
 
 Go to Window > Rendering > Lighting > Environment, which will open a new window that contains all the lighting data for this scene. Look for the “Skybox Material” line under 'Environment', and click the little circle on its right side. This will open up a box that lets you select which skybox to use. Search for “nightsky2” and select it.
 
 ![image](../../assets/images/oculus/lab1/VRDecal-7.png)
 
-With our skybox in we can now properly fix our lighting. To have Unity auto-generate lighting, go to the 'Scene' tab on the Lighting window. Select the asset for 'Lighting Settings Asset' to be LabLighting'. Then, you check “Auto Generate" and click “Generate Lighting” to start computing the proper lighting for the scene.
+If the bulidings are still black, check that you are on android platform. If this doesn't change anything, we will need to properly fix our lighting. To have Unity generate lighting, go to the 'Scene' tab on the Lighting window. Select the asset for 'Lighting Settings Asset' to be LabLighting'. Then, click “Generate Lighting” to start computing the proper lighting for the scene with "Auto Generate" unchecked.
+
+This will take a while. You can see the progress on the bottom right of the editor.
 
 ![image](../../assets/images/oculus/lab1/VRDecal-9.png)
 
@@ -106,13 +112,21 @@ If you try pressing play now, you’ll just get a black screen telling you that 
 
 First, our project does not have any packages that support XR functionality, so let us install them.
 
-Go to **Window > Package Manager** and switch the top tab from "Packages: In Project" to "Packages: Unity Registry" to see all of the available packages. Install "XR Plugin Management", "Oculus XR Plugin", and "XR Interaction Toolkit". Let the package manager restart your project to make changes if asked. Now we have the necessary packages to get started!
+Go to **Window > Package Manager** and switch the top tab from "Packages: In Project" to "Packages: Unity Registry" to see all of the available packages. Install 
+
+"XR Plugin Management"
+
+"Oculus XR Plugin"
+
+"XR Interaction Toolkit"
+
+Let the package manager restart your project to make changes if asked. Now we have the necessary packages to get started!
 
 (If you don't see XR Interaction Toolkit then click the "+" on the top left and "Add Package by Name..." and insert "com.unity.xr.interaction.toolkit".)
 
 ![image](../../assets/images/oculus/lab1/Screenshot 2022-09-14 193113_1.png)
 
-Next, we need to define default inputs so when we make the GameObject for the player, it will have inputs mapped to the Rift S control set. To first set the defaults, go to **XR > XR Interaction Toolkit > 2.1.1 > Starter Assets**, and select "XRI Default Left Controller" and select "Add to ActionBasedController default". There is another default for the right controller, do the same for this one. 
+Next, we need to define default inputs so when we make the GameObject for the player, it will have inputs mapped to the Rift S control set. To first set the defaults, go to the bottom of the editor where the file explorer is, and select: **XR > XR Interaction Toolkit > 2.1.1 > Starter Assets**, and select "XRI Default Left Controller" and select "Add to ActionBasedController default". There is another default for the right controller, do the same for this one. 
 
 ![image](../../assets/images/oculus/lab1/xrdefault.jpg)
 
@@ -124,7 +138,7 @@ Next, right-click anywhere on the GameObject Hierarchy, and select **XR > XR Ori
 
 ![image](../../assets/images/oculus/lab1/transform000.jpg)
 
-Think of this GameObject as the player. If you go from **XR Origin > Camera Offset > ...**, you can see that the left and right controllers have actions that correspond to "LeftHand" or "RightHand" respective to its controller.
+Think of this GameObject as the player. If you go from **XR Origin > Camera Offset > ...**, you can see that the left and right controllers have actions that correspond to "Left" or "Right" respective to its controller.
 
 Unity needs a way to read the values of a given action, so if we go to **XR Interaction Manager** in the hierarchy, click on **Add Component** on the Inspector panel and search for a "Input Action Manager". Let us press on the "+" and select the "XRI Default Input Actions". 
 
@@ -132,15 +146,28 @@ Unity needs a way to read the values of a given action, so if we go to **XR Inte
 
 Ok! That solves inputs for controllers!
 
-There’s one final thing we need to do before we can put on the headset. Go to **Edit > Project Settings > XR Plug-in Management** and check “**Oculus**” if it’s not already enabled. Then put on the headset and press play!
+There’s one final thing we need to do before we can put on the headset. Go to **Edit > Project Settings > XR Plug-in Management** and check “**Oculus**” if it’s not already enabled.
+
 
 ![image](../../assets/images/oculus/lab1/xrpluginmanagement.jpg)
+
+# Building
+
+The project is now ready to be built onto the headset. Go to **File > Build Settings** and on the bottom left of this window, go to **Player Settings**. Scroll down to **Minimum API Level**, and select 23. Be sure to 'Add Open Scenes'. You should see 'Scenes/lab' with a checkbox. Since this is the first scene, the project will automatically load this file. 
+
+There are two options: 
+
+**Build**: Build an apk file of this unity project that you can upload to a device. **Build and Run** to upload to the device automatically.
+
+**Patch / Patch and Run**: Shorter process of building an apk from previous resources.
+
+We will use **Patch and Run** because we will be making small iterations. First, select the Oculus Quest 2 as the run device (you will need to approve inside the headset to select the device). Then check the **Development Build** box. Then try to patch and run! This will take a while on the first time you run it, so feel free to take a break! If it takes more than 5 minutes, let us know.
 
 ![image](../../assets/images/oculus/lab1/VRDecal-11.png)
 
 *Note: If it looks like this image in the headset with red lasers, you’re all good! If you seem to be stuck in the ground, select your XR Origin within your hierarchy and, in the Inspector view, change Tracking Origin Mode from Not Specified to Floor Level. Now try it again.*
 
-As you move your controllers around, you can see that there are red lasers coming from them. Let us disable these by disabling the "XR Ray Interactor" on both controllers. (As a reminder, you can find these controllers under **XR Origin > Camera Offset > Left/RightHandController**).
+As you move your controllers around, you can see that there are red lasers coming from them. Let us disable these by disabling the "Line Renderer" on both controllers. (As a reminder, you can find these controllers under **XR Origin > Camera Offset > Left/RightHandController**).
 
 # Adding Hands and the Stand
 
@@ -148,7 +175,7 @@ We now want to add hands and the gun to our game so we can build interactivity b
 
 ![image](../../assets/images/oculus/lab1/VRDecal-12.png)
 
-Let’s start with your hands and input. First, go to the hierarchy and go to **XR Origin > Camera Offset > LeftHand Controller**. On the XR Controller component, we can see that there is a **Model** area with a "Model Prefab" field. This will be where we can put our hand model. To find the hand models, go to **Prefabs > XR Prefabs** and assign LeftHand to the "Model Prefab" field. Do the same with the right-hand controller.
+Let’s start with your hands and input. First, go to the hierarchy and go to **XR Origin > Camera Offset > Left Controller**. On the XR Controller component, we can see that there is a **Model** area with a "Model Prefab" field. This will be where we can put our hand model. To find the hand models, go to **Prefabs > XR Prefabs** and assign LeftHand to the "Model Prefab" field. Do the same with the right controller.
 
 ![image](../../assets/images/oculus/lab1/VRDecal-14.png)
 
@@ -164,9 +191,9 @@ Use the movement (w), rotation (e), and scale (r) tools to position these crates
 
 Now we can create the gun. Start by right-clicking an empty spot within the hierarchy and clicking “Create Empty”. This will create an object with nothing but a transform component, which we’ll add to and flesh out over the course of these labs. Name it “Gun”, and reset its transform - we’ll move it later.
 
-Go into the Models folder and find the object called “makarov”. This is the 3D model for our gun. Go ahead and drag it onto our newly created empty object, which will parent it under Gun.
+Go into the Models folder and find the object called “makarov”. This is the 3D model for our gun. Go ahead and drag it onto our newly created empty object, which will be the Gun's *parent*.
 
-Parenting is a concept in Unity that allows us to construct complex objects out of simpler ones and have them all move together as one. An object (call it the child) parented under another object (call it the parent) will have all its transform values defined as relative to that of its parent. This means when the parent moves, scales, or rotates, its child will change along with it.
+**Parenting** is a concept in Unity that allows us to construct complex objects out of simpler ones and have them all move together as one. An object (call it the child) parented under another object (call it the parent) will have all its transform values defined as relative to that of its parent. This means when the parent moves, scales, or rotates, its child will change along with it.
 
 Let’s rename this newly childed object to “Model”. It’ll start out being far, far too large, so scale each of its axes to 0.025. Then select its parent Gun and move it around, which should now move the 3D model around as well. Position/rotate gameobject Gun so it sits on top of the upper crate.
 
@@ -182,7 +209,7 @@ The default size of the box collider is neither the right size or shape. Change 
 
 Now, add a Rigidbody component to Gun. Rigidbodies are what define something as a moving, physical object. It tells Unity how to treat this object in its physics calculations with variables like weight and drag. Note that an object cannot have a rigidbody component without also having a collider (since Unity needs physical bounds to perform physics calculations).
 
-Let’s test whether or not our gun is a valid physics object. Raise it up a little in the inspector, then put on the headset and press play. You should see that the gun has fallen from its original location to rest on the upper box.
+Let’s test whether or not our gun is a valid physics object. Raise it up a little in the inspector, and press play. You should see that the gun has fallen from its original location to rest on the upper box.
 
 ![image](../../assets/images/oculus/lab1/VRDecal-20.png)
 
@@ -190,7 +217,7 @@ Actually, it hovers a little above the crate. Why?
 
 # Adding to the Environment
 
-Look through the project directory and find out where the 3D models used for this project are stored. You'll find a lot more than what we used in the scene! As a final exercise, drag in some of models and decorate the scene with them.
+Look through the project directory and find out where the 3D models used for this project are stored. You'll find a lot more than what we used in the scene! As a final exercise, drag in some of models and decorate the scene with them. When done, **Patch and Run** to your headset!
 
 # Check Off
 
