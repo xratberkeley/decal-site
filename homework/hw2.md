@@ -25,6 +25,9 @@ First off, download the skeleton asset package [**here**](https://drive.google.c
 
 In the meantime, take a look at these amazing music visualizer examples created with Unity by other people. This homework only goes over the basics, but you could take it to another level by adding your own flair. Links: [1](https://www.youtube.com/watch?v=tMzmHWekLaY), [2](https://www.youtube.com/watch?v=cBYx8Dm81tc), [3](https://www.youtube.com/watch?v=80tu2ZLKD-o), [4](https://www.youtube.com/watch?v=XbNhv2ylzKw), [5](https://www.youtube.com/watch?v=swb-8Azjz9Q).
 
+# Walkthrough Video
+Here is a walkthrough of this homework. Feel free to use it to assist you:
+[Walkthrough Video](https://www.youtube.com/watch?v=4Av788P9stk&list=PL3POsQzaCw53p2tA6AWf7_AWgplskR0Vo&index=2).
 # Introducing Spectrum Theory
 
 Every sound that enters your ear is actually a sum of different frequencies. Pure waveforms from various sources combine together into a single complex waveform. This complex waveform is then processed by your brain to create music, conversation, and everything else you hear.
