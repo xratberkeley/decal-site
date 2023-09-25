@@ -218,7 +218,7 @@ Here are some suggestions on what you could add:
 
 # Submission and Grading
 
-Upload the project via Google Drive and submit the link to bCourses. (Instructions on Ed.) Completion of the functionality described in this homework will get you 4 points (out of 5), and adding your own improvements will get you the last point. There will be extra credit given to those whom we deemed went above and beyond with their improvements.
+Upload the project via Google Drive and submit the link to a google form on the resources page on Ed. Completion of the functionality described in this homework will get you 4 points (out of 5), and adding your own improvements will get you the last point. There will be extra credit given to those whom we deemed went above and beyond with their improvements.
 
 ## Credits
 {:.no_toc}
