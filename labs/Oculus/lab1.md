@@ -146,11 +146,6 @@ Unity needs a way to read the values of a given action, so if we go to **XR Inte
 
 Ok! That solves inputs for controllers!
 
-There’s one final thing we need to do before we can put on the headset. Go to **Edit > Project Settings > XR Plug-in Management** and check “**Oculus**” if it’s not already enabled.
-
-
-![image](../../assets/images/oculus/lab1/xrpluginmanagement.jpg)
-
 # Building
 
 The project is now ready to be built onto the headset. Go to **File > Build Settings** and on the bottom left of this window, go to **Player Settings**. Scroll down to **Minimum API Level**, and select 23. Be sure to 'Add Open Scenes'. You should see 'Scenes/lab' with a checkbox. Since this is the first scene, the project will automatically load this file. 
@@ -161,7 +156,9 @@ There are two options:
 
 **Patch / Patch and Run**: Shorter process of building an apk from previous resources.
 
-We will use **Patch and Run** because we will be making small iterations. First, select the Oculus Quest 2 as the run device (you will need to approve inside the headset to select the device). Then check the **Development Build** box. Then try to patch and run! This will take a while on the first time you run it, so feel free to take a break! If it takes more than 5 minutes, let us know.
+We will use **Build and Run** first, then on extra iterations, you can **Patch and Run** First, select the Oculus Quest 2 as the run device (you will need to approve inside the headset to select the device). Then check the **Development Build** box. Then try to build! This will take a while on the first time you run it, so feel free to take a break! If it takes more than 5 minutes, let us know.
+
+*Note: when building, give it any name when prompted.*
 
 ![image](../../assets/images/oculus/lab1/VRDecal-11.png)
 
@@ -183,7 +180,7 @@ Next, let’s create the two crates that make up the stand. If you look to the l
 
 ![image](../../assets/images/oculus/lab1/VRDecal-13.png)
 
-Use the movement (w), rotation (e), and scale (r) tools to position these crates into the shape shown in the first picture of the section. The lower crate should be just to the right of OVRCameraRig, and the upper crate should be smaller and sit on top of it. Don’t worry about being exact - just keep testing it with the headset on until the top of the upper crate is comfortably within arm’s reach. A tip: With the scale tool, dragging the white cube scales all axes.
+Use the movement (w), rotation (e), and scale (r) tools to position these crates into the shape shown in the first picture of the section. The lower crate should be just to the right of the XR Origin, and the upper crate should be smaller and sit on top of it. Don’t worry about being exact - just keep testing it with the headset on until the top of the upper crate is comfortably within arm’s reach. A tip: With the scale tool, dragging the white cube scales all axes.
 
 ![image](../../assets/images/oculus/lab1/VRDecal-15.png)
 

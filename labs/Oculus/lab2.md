@@ -16,13 +16,7 @@ grand_parent: Labs
 
 ---
 
-In this lab, we’ll focus completely on the gun. By the end of the lab, you should be able to pick up the gun, drop it, and fire it with the appropriate effects attached.
-
-How can we interact with our gun, anyway? If you hold an Oculus controller in your hand, you’ll notice that there are two triggers that we can press. One is with the middle finger, called the Hand Trigger, and the other is with the index finger, called the Index Trigger. Pictured below is the control scheme for any Oculus Controller.
-
-![image](../../assets/images/oculus/lab2/11.png)
-
-For our gun, we want to implement the following functionality:
+In this lab, we’ll focus on interacting with the gun. For our gun, we want to implement the following functionality:
 
 - Hovering over the gun and holding down the hand trigger / grip picks up the gun.
 
@@ -32,7 +26,7 @@ For our gun, we want to implement the following functionality:
 
 - When the hand trigger is released, the gun is dropped and becomes a physics object.
 
-You can download the skeleton for this lab [**here**](https://drive.google.com/file/d/1oP98wSPgWyv5UAmYDRQiT1F4F3_IpQbI/view?usp=sharing) - alternatively, you can directly start working off a completed Lab 1! **This is a long lab, so please don’t hesitate to ask the facilitators questions or just reach out if you get stuck. We’re here to help!**
+You can download the skeleton for this lab [**here**](https://drive.google.com/file/d/1hqi-KwT6aeFKFydsiW8lUqrgHsBvcNuy/view?usp=drive_link) - alternatively, you can directly start working off a completed Lab 1! **This is a long lab, so please don’t hesitate to ask the facilitators questions or just reach out if you get stuck. We’re here to help!**
 
 After initializing the new project with the skeleton, you will need to install the XR packages again through **Window > Package Manager > (on the top) Packages: Unity Registry**:
 
@@ -94,7 +88,7 @@ Here, the update function reads the value from the editor-specified InputActionR
 
 Now that we have this public value which we can edit in the Unity Editor, go to the Left Hand and Right Hand GameObject in the XR Origin and add the Hand script as a component. We can see a field for "Controller Action Trigger" where we can select the corresponding action reference (click the circle on the right of the field and search for "Trigger"; select the one for the corresponding controller).
 
-Press play and try pressing the triggers. Something like "Trigger from LeftHand/RightHand Controller" should be printed into the console whenever the trigger is pressed.
+Build and try pressing the triggers. Something like "Trigger from LeftHand/RightHand Controller" should be printed into the console whenever the trigger is pressed.
 
 # Firing the Gun (Part 1)
 
@@ -190,7 +184,7 @@ We’re already checking for item 1 when OnTriggerStay is called, so let us read
         }
     }
 
-When we press play, we can see that the trigger value can either be a 1 or a 0. Since we should not be able to hold the trigger and keep firing, we need to wait until the trigger value reaches 0 before firing again. Let's save the trigger value for each frame to reference and overwrite in the next with a float prevTrigger:
+When we build, we can see that the trigger value can either be a 1 or a 0. Since we should not be able to hold the trigger and keep firing, we need to wait until the trigger value reaches 0 before firing again. Let's save the trigger value for each frame to reference and overwrite in the next with a float prevTrigger:
 
     public class Hand : MonoBehaviour {
 
