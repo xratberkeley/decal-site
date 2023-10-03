@@ -36,7 +36,7 @@ After initializing the new project with the skeleton, you will need to install t
 
 # Grabbing the Gun with XR Interaction Toolkit
 
-Because of the XR Interaction Toolkit package, we can easily grab objects only using the component system. First, go to the LeftHandController (**XR Origin > Camera Offset > LeftHand Controller**) and in the inspector, click **Add Component**, and add **XR Direct Interactor** with Hide Controller on Select box ticked and Sphere Collider with a radius of 0.2 and check the "Is Trigger" box. Repeat this with the RightHandController. 
+Because of the XR Interaction Toolkit package, we can easily grab objects only using the component system. First, go to the LeftHandController (**XR Origin > Camera Offset > LeftHand Controller**) and in the inspector, click **Add Component** (if it is already in there, then please edit the current one), and add **XR Direct Interactor** with Hide Controller on Select box ticked and Sphere Collider with a radius of 0.2 and check the "Is Trigger" box. Repeat this with the RightHandController. 
 
 Next, go to the Gun in the hierarchy and add the **XR Grab Interactable** component. Under **Movement Type**, select **Kinematic**. 
 
@@ -89,6 +89,14 @@ Here, the update function reads the value from the editor-specified InputActionR
 Now that we have this public value which we can edit in the Unity Editor, go to the Left Hand and Right Hand GameObject in the XR Origin and add the Hand script as a component. We can see a field for "Controller Action Trigger" where we can select the corresponding action reference (click the circle on the right of the field and search for "Trigger"; select the one for the corresponding controller).
 
 Build and try pressing the triggers. Something like "Trigger from LeftHand/RightHand Controller" should be printed into the console whenever the trigger is pressed.
+
+If you notice, the console doesn't print out anything when on the headset because the headset contains the log. To see the headset's log,
+
+Install the **Android** **Logcat** package
+
+Then go to **Window** > **Analysis** > **Android** **Logcat**
+
+After patching and running / build and run, this window should show the console for the headset!
 
 # Firing the Gun (Part 1)
 
