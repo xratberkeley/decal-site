@@ -33,6 +33,10 @@ After initializing the new project with the skeleton, you will need to install t
 - Oculus XR Plugin
 - XR Plugin Management
 - XR Interaction Toolkit
+- Android Logcat
+
+Be sure to go to **Window > Rendering > Lighting** and be sure to uncheck Auto-Generate lighting. We do not want Global Illumination in this project.
+
 
 # The Monster Prefab
 
@@ -98,13 +102,13 @@ Then to get the monster moving, all we have to do is add this line to Update(), 
         navMeshAgent.SetDestination(player.transform.position);
     }
 
-In Unity, add this script to the Monster gameobject. For the player field, drag in Main Camera which can be found under XR Origin > Camera Offset, which represents our headset. Press play, and you should see the monster move towards you.
+In Unity, add this script to the Monster gameobject. For the player field, drag in Main Camera which can be found under XR Origin > Camera Offset, which represents our headset. Build, and you should see the monster move towards you.
 
 It looks a little odd to see our monster power-slide to its destination, so we’re going to add in animation support. Add an Animator component to the Monster. We’ve provided a Controller for you in Assets > Animations > Monster and an Avatar (the mapping between Unity’s normal bone structure and a special one) in Models > Monster > MonsterAvatar. Drag those into their fields.
 
 ![image](../../assets/images/oculus/lab3/5.png)
 
-Take a look at the monster controller in the Animator window. It’s a little more complicated than the gun controller, but not by much. Notice that we start off in the “Walking” state. If you press play now, the monster should walk towards you with a lumbering walk animation.
+Take a look at the monster controller in the Animator window. It’s a little more complicated than the gun controller, but not by much. Notice that we start off in the “Walking” state. If you build now, the monster should walk towards you with a lumbering walk animation.
 
 Before continuing, we’re going to add in sound support. Add an audio source component to the Monster and disable Play On Awake. Then in Monster.cs, declare/initialize it properly along with three audio clips, which we’ll use throughout the lab. Play the spawnClip in Start() to announce that this Monster has spawned.
 
@@ -226,7 +230,7 @@ The end result is that this if case returns true only if the fired raycast hit s
         }
     }
 
-In Unity, assign the “Monster” tag to the monster gameobject, creating it if necessary. Press play, and shoot your gun at the monster. Does it trigger the print message?
+In Unity, assign the “Monster” tag to the monster gameobject, creating it if necessary. Build, and shoot your gun at the monster. Does it trigger the print message?
 
 # Hurting the Monster
 

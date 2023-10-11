@@ -34,6 +34,7 @@ After initializing the new project with the skeleton, you will need to install t
 - XR Plugin Management
 - XR Interaction Toolkit (if not there: on the top left of the package manager, click the plus and add by name "*com.unity.xr.interaction.toolkit*")
 
+Be sure to go to **Window > Rendering > Lighting** and be sure to uncheck Auto-Generate lighting. We do not want Global Illumination in this project.
 # Grabbing the Gun with XR Interaction Toolkit
 
 Because of the XR Interaction Toolkit package, we can easily grab objects only using the component system. First, go to the LeftHandController (**XR Origin > Camera Offset > LeftHand Controller**) and in the inspector, click **Add Component** (if it is already in there, then please edit the current one), and add **XR Direct Interactor** with Hide Controller on Select box ticked and Sphere Collider with a radius of 0.2 and check the "Is Trigger" box. Repeat this with the RightHandController. 
